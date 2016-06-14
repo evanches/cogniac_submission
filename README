@@ -27,7 +27,7 @@ to known what kind of range of distance would be allowed
 The libraries that I used were all from the python opencv, and based a lot on
 an opencv tutorial website:
 
-http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials
+http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html
 
 I had used the SIFT algorithm before in MATLAB, not in python, so a lot
 of the effort was put into the pushing the opencv library into an AWS 
