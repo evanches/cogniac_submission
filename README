@@ -1,0 +1,36 @@
+The program submitted to you all is rather simple in theory.  Essentially,
+I use a open source feature detector on all of the original images, specifically
+the SIFT detector.  I then parse through all of the modified images and calculate
+their keypoints as well.  Then I used a brute force matching algorithm to
+match the most similar SIFT detection points between the two images.  I then
+take the 25 best matches and sum their distances.  The original image with the
+smallest keypoint difference from the modified image is selected as a match.
+
+This algorithm is pretty poor, and does not work in any kind of speed.  A lot
+of my issues were actually from instantiating the libraries.  The script does
+not perform in a reasonable amount of time.  However, I think that it is a strong
+initial start.  I have also tried to make a testing script called test.py, to
+analyze some of the statistics from the original code, but again had a ton
+of issues with fully utilizing the library.  The code I have is very buggy,
+and will not execute fully anyway.
+
+One of the major issues was the incredible amount of time a O(N^2) algorithm
+would take.  Obviously this does not scale at all.  Major improvements could
+be made to this algorithm.  First would be limiting the total number of 
+SIFT detection points, perhaps to 25.  Another change would be to change the way
+the search algorithm works, by using a kmeans approach, and not having
+to search through every single image.  Also in the original dictionary, there
+is no sense of images that could be out of the directory.  Instead, baseline
+statistics would be needed, which I'd try to establish from the test.py in order
+to known what kind of range of distance would be allowed
+
+The libraries that I used were all from the python opencv, and based a lot on
+an opencv tutorial website:
+
+http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials
+
+I had used the SIFT algorithm before in MATLAB, not in python, so a lot
+of the effort was put into the pushing the opencv library into an AWS 
+machine.  This clearly was a lot of the struggles of my development today.
+Specifically, I used the SIFT_detector and the brute force matcher for
+my calculations.
